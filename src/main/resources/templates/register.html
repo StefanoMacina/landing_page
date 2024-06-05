@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Registration</title>
+</head>
+<body>
+<h1>Registration Form</h1>
+<form action="#" th:action="@{/register}" th:object="${user}" method="post">
+    <div>
+        <label>name:</label>
+        <input type="text" th:field="*{name}" />
+    </div>
+    <div>
+        <label>lastname:</label>
+        <input type="text" th:field="*{lastname}" />
+    </div>
+    <div>
+        <label>email:</label>
+        <input type="text" th:field="*{email}" />
+    </div>
+    <div>
+        <label>Role:</label>
+        <select th:field="*{role}">
+            <option value="spettatore">Spettatore</option>
+            <option value="speaker">Speaker</option>
+            <option value="presentatore">Presentatore</option>
+        </select>
+    </div>
+    <div>
+        <label>Birthdate:</label>
+        <input type="date" th:field="*{birthdate}" />
+    </div>
+    <div>
+        <label>last job:</label>
+        <input type="text" th:field="*{lastjob}" />
+    </div>
+    <div>
+        <label>last company:</label>
+        <input type="text" th:field="*{lastcompany}" />
+    </div>
+    <div>
+        <button type="submit">submit</button>
+    </div>
+</form>
+<div th:if="${param.success}">
+    <p>Registration successful!</p>
+</div>
+</body>
+</html>
