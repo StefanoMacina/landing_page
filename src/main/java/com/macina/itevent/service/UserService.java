@@ -26,7 +26,7 @@ public class UserService implements CommandLineRunner, IUserService {
     }
 
 
-    // !!!!!!! use it only during development
+    // use it during startup in development only
     public void addRandomUsers(){
         Random r = new Random();
 
